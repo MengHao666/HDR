@@ -59,7 +59,7 @@ you could run `python explore_AIH.py` to explore our AIH dataset.Please modify t
 
 
 ## Demo
-Download our pretrained models from [onedrive](https://www.google.com.hk/), then extract all files.
+Download our pretrained models from [Google Drive](https://drive.google.com/file/d/11kGAz_qpvHj15tozcWZhbC_Dbgj5FKBu/view?usp=sharing), then extract all files.
 Now your `demo_work_dirs` folder structure should like this:
 ```
 demo_work_dirs/
