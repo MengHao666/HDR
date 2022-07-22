@@ -1,0 +1,132 @@
+dr_model:
+    algo: PartialCompletionContentCGAN
+    total_iter: 70000
+    lr_steps: [ ]
+    lr_mults: [ ]
+    lr: 0.0008
+    warmup_lr: [ ]
+    warmup_steps: [ ]
+    backbone_arch: PConvUNet
+    backbone_param:
+      input_channels: 8
+      layer_size: 8
+    discriminator: InpaintDiscriminator
+    discriminator_params:
+      in_channels: 5
+      use_sigmoid: True
+    d2g_lr: 0.1
+    gan_type: 'nsgan'
+    adv_loss_weight: 0.1
+    with_modal: True
+    lambda_dict: { 'valid': 1.0, 'hole': 6.0, 'tv': 0.1, 'prc': 0.1, 'style': 250.0 }
+
+
+#model:
+#  algo: HPE_Net
+#  total_iter: 460000
+#  lr_steps: [ 350000,400000 ]
+#  lr_mults: [ 0.1,0.1 ]
+#  lr: 0.0006
+#  warmup_lr: [ ]
+#  warmup_steps: [ ]
+#  d2g_lr: 0.1
+#  hpe_stacks: 1
+#  lambda_dict: { 'hm': 1.0, 'dm': 1.0, 'lm': 5.0 }
+#  initilize: "interhand_offfical"
+
+
+hpe_model:
+  algo: HPE_Net
+  total_iter: 600000
+  lr_steps: [ 500000,550000 ]
+  lr_mults: [ 0.1,0.1 ]
+  lr: 0.0001
+  warmup_lr: [ ]
+  warmup_steps: [ ]
+  d2g_lr: 0.1
+  hpe_stacks: 1
+  lambda_dict: { 'hm': 1.0, 'dm': 1.0, 'lm': 5.0 }
+  initilize: "interhand_offfical"
+
+data:
+  trainval_dataset: "InterHand"
+  memcached: True
+  memcached_client: "/mnt/lustre/share/memcached_client"
+  "root_path": "/mnt/lustre/menghao/dataset"
+  "input_img_shape": [ 256, 256 ]
+  "output_hm_shape": [ 64, 64 ]
+  data_mean: [ 0.485, 0.456, 0.406 ]
+  data_std: [ 0.229, 0.224, 0.225 ]
+  "sigma": 2.5
+  "colors": {
+    "RED": "#FF0000",
+    'GREEN': "#00FF00",
+    'BLUE': "#0000FF",
+    'PURPLE': "#A327EA",
+    'ORANGE': "#F29721",
+    'GREY': "#6E6672",
+    'AERO': "#6BC0EA",
+    'PICTON_BLUE': "#44BBF8" }
+  "colors_hand": [ 'RED', 'RED', 'RED', 'RED',
+                   'ORANGE', 'ORANGE', 'ORANGE', 'ORANGE',
+                   'GREEN', 'GREEN', 'GREEN', 'GREEN',
+                   'BLUE', 'BLUE', 'BLUE', 'BLUE',
+                   'PURPLE', 'PURPLE', 'PURPLE', 'PURPLE' ]
+  'interhand_link_hand': [ [ 0, 1 ], [ 1, 2 ], [ 2, 3 ], [ 3, 20 ],
+                           [ 4, 5 ], [ 5, 6 ], [ 6, 7 ], [ 7, 20 ],
+                           [ 8, 9 ], [ 9, 10 ], [ 10, 11 ], [ 11, 20 ],
+                           [ 12, 13 ], [ 13, 14 ], [ 14, 15 ], [ 15, 20 ],
+                           [ 16, 17 ], [ 17, 18 ], [ 18, 19 ], [ 19, 20 ] ]
+  'snap_link_hand': [ [ 0, 1 ], [ 1, 2 ], [ 2, 3 ], [ 3, 4 ],
+                      [ 0, 5 ], [ 5, 6 ], [ 6, 7 ], [ 7, 8 ],
+                      [ 0, 9 ], [ 9, 10 ], [ 10, 11 ], [ 11, 12 ],
+                      [ 0, 13 ], [ 13, 14 ], [ 14, 15 ], [ 15, 16 ],
+                      [ 0, 17 ], [ 17, 18 ], [ 18, 19 ], [ 19, 20 ] ]
+  "IH2SNAP": [ 20,
+               3, 2, 1, 0,
+               7, 6, 5, 4,
+               11, 10, 9, 8,
+               15, 14, 13, 12,
+               19, 18, 17, 16
+  ]
+  "SNAP_PARENT": [
+      0,  # 0's parent
+      0,  # 1's parent
+      1,
+      2,
+      3,
+      0,  # 5's parent
+      5,
+      6,
+      7,
+      0,  # 9's parent
+      9,
+      10,
+      11,
+      0,  # 13's parent
+      13,
+      14,
+      15,
+      0,  # 17's parent
+      17,
+      18,
+      19,
+  ]
+  "SNAP_ROOT_ID": 0
+  "SNAP_REF_ID": 9
+  load_rgb: True
+  batch_size: 48
+  batch_size_test: 320
+  workers: 1
+  hand_side: "right"
+
+trainer:
+  initial_val: False
+  val_freq: 1500
+  val_iter: 10
+  val_disp_start_iter: 0
+  val_disp_end_iter: 1
+  print_freq: 100
+  save_freq: 3000
+  loss_record: [ 'hm', 'dm', 'lm' ]
+  tensorboard: True
