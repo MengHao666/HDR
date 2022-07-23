@@ -31,7 +31,7 @@ conda env create -n hdr -f environment.yml
 ```
 
 ## explore our AIH dataset
-Download it from [onedrive](https://www.google.com.hk/), then extract all files.
+Download it from [onedrive](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/js20_connect_hku_hk/El9VswXHW35EocHo4ogpW5EBpzl3bZW7WoXoXeX3cEvcpw?e=M6gCIt), then extract all files.
 Now your `AIH_dataset` folder structure should like this:
 ```
 AIH_dataset/
