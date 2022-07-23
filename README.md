@@ -44,7 +44,7 @@ AIH_dataset/
             val/
             
     AIH_syn/
-        BLACK4_final_filtered_sh_jdxs/
+        filtered_list/
         human_annot/
             train/
             test/
@@ -56,7 +56,6 @@ AIH_dataset/
         
 ```
 you could run `python explore_AIH.py` to explore our AIH dataset.Please modify the `AIH_root` in the code.
-
 
 ## Demo
 Download our pretrained models from [Google Drive](https://drive.google.com/file/d/11kGAz_qpvHj15tozcWZhbC_Dbgj5FKBu/view?usp=sharing), then extract all files.
@@ -91,4 +90,7 @@ you could run `python demo/demo.py` to see how our pipeline works.
 }
 ```
 ## Acknowledgements
-- The code is built upon [Minimal-Hand-pytorch](https://github.com/MengHao666/Minimal-Hand-pytorch) and [deocclusion](https://github.com/XiaohangZhan/deocclusion/) .
+- The code is built upon [Minimal-Hand-pytorch](https://github.com/MengHao666/Minimal-Hand-pytorch), [deocclusion](https://github.com/XiaohangZhan/deocclusion/), and [mmsegmentation](https://github.com/open-mmlab/mmsegmentation).
+
+## License
+HDR (including AIH dataset) is CC-BY-NC 4.0 licensed, as found in the LICENSE file.

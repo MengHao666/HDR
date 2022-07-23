@@ -57,7 +57,6 @@ class PartialCompContentDataset(torch.utils.data.Dataset):
             # syn_cfg_path = "syn_cfgs/all_machine_annot_train_syn_cfgs.npy"
             self.syn_cfgs_H = np.load(syn_cfg_path_H, allow_pickle=True).tolist()
 
-            # self.render_data_root = "/home/SENSETIME/menghao/Desktop/date2/Render_data"
             self.render_data_root = config["render_data_root"]
 
             # human-annot train
@@ -598,8 +597,8 @@ if __name__ == '__main__':
 
         # AIH_syn config
         "syn_segdata_root": osp.join(AIH_root, 'AIH_syn'),
-        'syn_cfg_root': osp.join(AIH_root, 'AIH_syn\syn_cfgs'),
-        'syn_indexs_root': osp.join(AIH_root, 'AIH_syn\BLACK4_final_filtered_sh_jdxs'),
+        'syn_cfg_root': osp.join(AIH_root, 'AIH_syn', 'syn_cfgs'),
+        'syn_indexs_root': osp.join(AIH_root, 'AIH_syn', 'filtered_list'),
         "final_aug": "less",
 
         # AIH_render config
