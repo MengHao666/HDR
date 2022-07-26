@@ -28,9 +28,17 @@ Please first install CUDA and ensure NVCC works.
 You can then create a conda environment using provided yml file as following:
 ```
 conda env create -n hdr -f environment.yml
+conda activate hdr
 ```
 
-## explore our AIH dataset
+## Clone our repo
+```
+git clone https://github.com/MengHao666/HDR.git
+cd HDR
+```
+
+
+## Explore our AIH dataset
 Download it from [onedrive](https://connecthkuhk-my.sharepoint.com/:f:/g/personal/js20_connect_hku_hk/El9VswXHW35EocHo4ogpW5EBpzl3bZW7WoXoXeX3cEvcpw?e=M6gCIt), then extract all files.
 Now your `AIH_dataset` folder structure should like this:
 ```
@@ -58,26 +66,35 @@ AIH_dataset/
 you could run `python explore_AIH.py` to explore our AIH dataset.Please modify the `AIH_root` in the code.
 
 ## Demo
-Download our pretrained models from [Google Drive](https://drive.google.com/file/d/11kGAz_qpvHj15tozcWZhbC_Dbgj5FKBu/view?usp=sharing), then extract all files.
+Download our pretrained models from [Google Drive](https://drive.google.com/file/d/11kGAz_qpvHj15tozcWZhbC_Dbgj5FKBu/view?usp=sharing) 
+into `HDR` file directory, then extract all files inside.
 Now your `demo_work_dirs` folder structure should like this:
 ```
-demo_work_dirs/
-
-    All_train_SingleRightHand/
-        checkpoints/
-            ckpt_iter_261000.pth.tar
+HDR/
+    ...
+    
+    demo_work_dirs/
+    
+        All_train_SingleRightHand/
+            checkpoints/
+                ckpt_iter_261000.pth.tar
+                
+        Interhand_seg/
+            iter_237500.pth
             
-    Interhand_seg/
-        iter_237500.pth
-        
-    TDR_fintune
-        checkpoints/
-            ckpt_iter_138000.pth.tar
-            D_iter_138000.pth.tar
+        TDR_fintune
+            checkpoints/
+                ckpt_iter_138000.pth.tar
+                D_iter_138000.pth.tar
         
         
 ```
-you could run `python demo/demo.py` to see how our pipeline works.
+
+You could run `python demo/demo.py` to see how our pipeline works. Note you may need to modify the full path of `HDR` in line 5 as we tested in Win10 Pro.
+
+The results of **HDR+SHPE** are like following:
+![](assets/demo_left_hand.png)
+![](assets/demo_right_hand.png)
 
 ## Citation
 ```
@@ -90,7 +107,11 @@ you could run `python demo/demo.py` to see how our pipeline works.
 }
 ```
 ## Acknowledgements
-- The code is built upon [Minimal-Hand-pytorch](https://github.com/MengHao666/Minimal-Hand-pytorch), [deocclusion](https://github.com/XiaohangZhan/deocclusion/), and [mmsegmentation](https://github.com/open-mmlab/mmsegmentation).
+The code is built upon following works:
+- [Minimal-Hand-pytorch](https://github.com/MengHao666/Minimal-Hand-pytorch)
+- [deocclusion](https://github.com/XiaohangZhan/deocclusion/)
+- [mmsegmentation](https://github.com/open-mmlab/mmsegmentation)
+- [PVT_v2](https://github.com/whai362/PVT/blob/v2/detection/pvt_v2.py)
 
 ## License
 HDR (including AIH dataset) is CC-BY-NC 4.0 licensed, as found in the LICENSE file.

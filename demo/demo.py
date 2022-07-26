@@ -1,6 +1,8 @@
 import cv2
 import yaml
 import os.path as osp
+import sys
+sys.path.insert(0,'E:\PycharmProjects\HDR')
 from mmseg.apis import inference_segmentor, init_segmentor
 import models
 import numpy as np
@@ -10,6 +12,7 @@ import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 from PIL import Image
+
 
 
 def unormalize(tensor, mean, div):
@@ -236,8 +239,8 @@ for k, v in final_bboxs.items():
 
 ####
 # set which hand side
-# hand_side = 'right'
-hand_side = 'left'
+hand_side = 'right'
+# hand_side = 'left'
 config['hand_side'] = hand_side
 config['input_img_shape'] = [256, 256]
 used_dr_output = "combination"
