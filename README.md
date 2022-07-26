@@ -112,6 +112,7 @@ The code is built upon following works:
 - [deocclusion](https://github.com/XiaohangZhan/deocclusion/)
 - [mmsegmentation](https://github.com/open-mmlab/mmsegmentation)
 - [PVT_v2](https://github.com/whai362/PVT/blob/v2/detection/pvt_v2.py)
+- [InterHand2.6M](https://github.com/facebookresearch/InterHand2.6M)
 
 ## License
 HDR (including AIH dataset) is CC-BY-NC 4.0 licensed, as found in the LICENSE file.
