@@ -17,6 +17,7 @@ This repo contains code and AIH (Amodal Interacting Hand) dataset of our HDR wor
 
 ## Cleaning in progress
 We are currently cleaning the code, so you may encounter runtime errors when running this repo.
+The author is busy with other projects, and may not release the code soon. But the demo and the dataset could show you how the pipeline works.
 
 ## Installation
 The `demo.py` has been tested on the following platform:
