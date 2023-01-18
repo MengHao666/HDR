@@ -1,5 +1,5 @@
 # 3D Interacting Hand Pose Estimation by Hand De-occlusion and Removal 
-### [Arxiv](https://arxiv.org/abs/2207.11061) | [Website](https://menghao666.github.io/HDR/) | 
+### [Arxiv](https://arxiv.org/abs/2207.11061) | [Website](https://menghao666.github.io/HDR/) | [Youtube](https://www.youtube.com/watch?v=Q8IViooXrwY) or [哔哩哔哩](https://www.bilibili.com/video/BV1LG4y1X7by/?share_source=copy_web&vd_source=b95f1bc03e231d9e795f5f04258584b8)) | [Poster](assets/6671.pdf)
 ![](assets/intro.png)
 >**3D Interacting Hand Pose Estimation by Hand De-occlusion and Removal**\
 > <a href="https://menghao666.github.io/" target="_blank">Hao Meng</a><sup>1,3*</sup>,
