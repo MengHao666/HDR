@@ -67,8 +67,7 @@ AIH_dataset/
 you could run `python explore_AIH.py` to explore our AIH dataset.Please modify the `AIH_root` in the code.
 
 ## Demo
-Download our pretrained models from [Google Drive](https://drive.google.com/file/d/11kGAz_qpvHj15tozcWZhbC_Dbgj5FKBu/view?usp=sharing) 
-into `HDR` file directory, then extract all files inside.
+Download our pretrained models from [Google Drive](https://drive.google.com/file/d/11kGAz_qpvHj15tozcWZhbC_Dbgj5FKBu/view?usp=sharing) or [baidu drive](https://pan.baidu.com/s/1CRvbzOpMRl5zIVFkZoWdaw) code:jrvm  into `HDR` file directory, then extract all files inside.
 Now your `demo_work_dirs` folder structure should like this:
 ```
 HDR/
